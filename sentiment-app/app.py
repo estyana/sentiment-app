@@ -40,6 +40,10 @@ if st.button("Prediksi Sentimen"):
 
         # vectorizing
         vector = vectorizer.transform([clean_text])
+        
+st.write(type(model))
+st.write(model)
+st.write(model.get_params())
 
         # prediction
         prediction = model.predict(vector)[0]
