@@ -32,15 +32,12 @@ if st.button("Prediksi Sentimen"):
     if text.strip() == "":
         st.warning("Teks tidak boleh kosong!")
     else:
-        # preprocessing
         clean_text = preprocess(text)
 
-        # vectorizing
         vector = vectorizer.transform([clean_text])
 
-st.write("Vector shape:", vector.shape)
+        st.write("Vector shape:", vector.shape)
 
-        # prediction
         prediction = model.predict(vector)[0]
 
         # output
