@@ -5,7 +5,13 @@ import matplotlib.pyplot as plt
 from utils.preprocessing import preprocess
 
 # Load model
-model = joblib.load("model/svm_model.pkl")
+import os
+import joblib
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "model", "svm_model.pkl")
+
+model = joblib.load(model_path)
 vectorizer = joblib.load("model/tfidf_vectorizer.pkl")
 
 st.set_page_config(page_title="Sentiment Analysis Shopee", layout="centered")
