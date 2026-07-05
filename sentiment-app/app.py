@@ -33,6 +33,11 @@ if st.button("Prediksi Sentimen"):
         vector = vectorizer.transform([clean_text])
 
         prediction = model.predict(vector)[0]
+        
+st.write("Sklearn version:", __import__("sklearn").__version__)
+st.write("Model:", model)
+st.write("Probability:", getattr(model, "probability", "TIDAK ADA"))
+st.write("Has _effective_probability:", hasattr(model, "_effective_probability"))
 
         # output
         if prediction == 1:
