@@ -10,9 +10,11 @@ import joblib
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(BASE_DIR, "model", "svm_model.pkl")
+vectorizer_path = os.path.join(BASE_DIR, "model", "tfidf_vectorizer.pkl")
 
 model = joblib.load(model_path)
-vectorizer = joblib.load("model/tfidf_vectorizer.pkl")
+vectorizer = joblib.load(vectorizer_path)
+
 
 st.set_page_config(page_title="Sentiment Analysis Shopee", layout="centered")
 
