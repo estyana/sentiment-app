@@ -15,12 +15,6 @@ vectorizer_path = os.path.join(BASE_DIR, "model", "tfidf_vectorizer.pkl")
 model = joblib.load(model_path)
 vectorizer = joblib.load(vectorizer_path)
 
-import sklearn
-
-st.write("Sklearn version:", sklearn.__version__)
-st.write("Model type:", type(model))
-st.write("Model:", model)
-
 
 st.set_page_config(page_title="Sentiment Analysis Shopee", layout="centered")
 
@@ -40,10 +34,6 @@ if st.button("Prediksi Sentimen"):
 
         # vectorizing
         vector = vectorizer.transform([clean_text])
-        
-st.write(type(model))
-st.write(model)
-st.write(model.get_params())
 
         # prediction
         prediction = model.predict(vector)[0]
