@@ -36,8 +36,6 @@ if st.button("Prediksi Sentimen"):
 
         vector = vectorizer.transform([clean_text])
 
-        st.write("Vector shape:", vector.shape)
-
         prediction = model.predict(vector)[0]
 
         # output
