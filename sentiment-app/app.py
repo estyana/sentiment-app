@@ -32,8 +32,8 @@ if st.button("Prediksi Sentimen"):
 
         vector = vectorizer.transform([clean_text])
         
-st.write("Jumlah fitur vector:", vector.shape)
-st.write("Jumlah fitur model:", model.n_features_in_)
+        st.write("Jumlah fitur vector:", vector.shape)
+        st.write("Jumlah fitur model:", model.n_features_in_)
 
         prediction = model.predict(vector)[0]
 
