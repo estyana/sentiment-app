@@ -6,8 +6,6 @@ import sklearn
 
 from utils.preprocessing import preprocess
 
-st.write("Scikit-learn Version:", sklearn.__version__)
-
 # Load model
 import os
 import joblib
@@ -18,9 +16,6 @@ vectorizer_path = os.path.join(BASE_DIR, "model", "tfidf_vectorizer.pkl")
 
 model = joblib.load(model_path)
 vectorizer = joblib.load(vectorizer_path)
-
-st.write("Model:", model)
-st.write("Tipe Model:", str(type(model)))
 
 st.set_page_config(page_title="Sentiment Analysis Shopee", layout="centered")
 
@@ -57,12 +52,24 @@ if st.button("Prediksi Sentimen"):
 
 st.divider()
 
-# Visualisasi sederhana
-st.subheader("📌 Contoh Distribusi (Dummy Pie Chart)")
+# Setelah prediction didapat
 
-labels = ["Negatif", "Positif"]
-sizes = [68, 32]
+if prediction == 1:
+    labels = ["Positif", "Negatif"]
+    sizes = [1, 0]
+else:
+    labels = ["Positif", "Negatif"]
+    sizes = [0, 1]
 
-fig, ax = plt.subplots()
-ax.pie(sizes, labels=labels, autopct='%1.1f%%')
+st.subheader("📊 Hasil Analisis Sentimen")
+
+fig, ax = plt.subplots(figsize=(4,4))
+ax.pie(
+    sizes,
+    labels=labels,
+    autopct='%1.0f%%',
+    startangle=90
+)
+
+ax.axis('equal')
 st.pyplot(fig)
