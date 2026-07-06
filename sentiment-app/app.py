@@ -42,7 +42,7 @@ if st.button("Prediksi Sentimen"):
         # output
         if prediction == 1:
             st.success("😊 Sentimen: POSITIF")
-        else prediction == 0:
+        else:
             st.error("😡 Sentimen: NEGATIF")
         
         if "prediction" not in st.session_state:
@@ -60,7 +60,7 @@ st.divider()
 if prediction == 1:
     labels = ["Positif", "Negatif"]
     sizes = [1, 0]
-else prediction == 0:
+else:
     labels = ["Positif", "Negatif"]
     sizes = [0, 1]
 
