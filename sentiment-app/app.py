@@ -57,15 +57,22 @@ st.divider()
 
 # Setelah prediction didapat
 
-if prediction == 1:
-    labels = ["Positif", "Negatif"]
-    sizes = [1, 0]
-else:
-    labels = ["Positif", "Negatif"]
-    sizes = [0, 1]
-
 if "prediction" not in st.session_state:
     st.session_state.prediction = None
+
+if st.button("Prediksi Sentimen"):
+
+    clean_text = preprocess(text)
+    vector = vectorizer.transform([clean_text])
+
+    st.session_state.prediction = model.predict(vector)[0]
+
+if st.session_state.prediction is not None:
+
+    if st.session_state.prediction == 1:
+        st.success("😊 POSITIF")
+    else:
+        st.error("😡 NEGATIF")
 
 st.subheader("📊 Hasil Analisis Sentimen")
 
