@@ -19,6 +19,9 @@ vectorizer_path = os.path.join(BASE_DIR, "model", "tfidf_vectorizer.pkl")
 model = joblib.load(model_path)
 vectorizer = joblib.load(vectorizer_path)
 
+st.write("Model:", model)
+st.write("Tipe Model:", str(type(model)))
+
 st.set_page_config(page_title="Sentiment Analysis Shopee", layout="centered")
 
 st.title("📊 Analisis Sentimen Ulasan Shopee")
