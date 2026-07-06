@@ -2,7 +2,11 @@ import streamlit as st
 import joblib
 import numpy as np
 import matplotlib.pyplot as plt
+import sklearn
+
 from utils.preprocessing import preprocess
+
+st.write("Scikit-learn Version:", sklearn.__version__)
 
 # Load model
 import os
