@@ -42,9 +42,12 @@ if st.button("Prediksi Sentimen"):
         # output
         if prediction == 1:
             st.success("😊 Sentimen: POSITIF")
-        else:
+        else prediction == 0:
             st.error("😡 Sentimen: NEGATIF")
-
+        
+        if "prediction" not in st.session_state:
+            st.session_state.prediction = None
+            
         # optional confidence (jika model support)
         if hasattr(model, "decision_function"):
             score = model.decision_function(vector)[0]
@@ -57,7 +60,7 @@ st.divider()
 if prediction == 1:
     labels = ["Positif", "Negatif"]
     sizes = [1, 0]
-else:
+else prediction == 0:
     labels = ["Positif", "Negatif"]
     sizes = [0, 1]
 
