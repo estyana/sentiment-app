@@ -54,7 +54,7 @@ st.divider()
 
 # Setelah prediction didapat
 
-if prediction =< :
+if prediction == :
     labels = ["Positif", "Negatif"]
     sizes = [1, 0]
 else:
