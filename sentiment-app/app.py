@@ -60,9 +60,12 @@ st.divider()
 if prediction == 1:
     labels = ["Positif", "Negatif"]
     sizes = [1, 0]
-else prediction == 0:
+else:
     labels = ["Positif", "Negatif"]
     sizes = [0, 1]
+
+if "prediction" not in st.session_state:
+    st.session_state.prediction = None
 
 st.subheader("📊 Hasil Analisis Sentimen")
 
