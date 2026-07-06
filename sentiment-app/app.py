@@ -59,14 +59,6 @@ if st.button("Prediksi Sentimen"):
 
 st.divider()
 
-col1, col2 = st.columns(2)
-
-with col1:
-    st.metric("Jumlah Fitur", model.n_features_in_)
-
-with col2:
-    st.metric("Confidence Score", round(score,2))
-
 # Tampilkan pie chart setelah prediksi
 if st.session_state.prediction is not None:
 
