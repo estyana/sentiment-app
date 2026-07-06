@@ -60,7 +60,7 @@ st.divider()
 if prediction == 1:
     labels = ["Positif", "Negatif"]
     sizes = [1, 0]
-else:
+else prediction == 0:
     labels = ["Positif", "Negatif"]
     sizes = [0, 1]
 
