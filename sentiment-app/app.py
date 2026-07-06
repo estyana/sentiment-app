@@ -1,4 +1,40 @@
 import streamlit as st
+
+st.set_page_config(
+    page_title="Analisis Sentimen Shopee",
+    page_icon="🛒",
+    layout="wide"
+)
+
+st.markdown("""
+<style>
+.main {
+    padding-top: 1rem;
+}
+
+.stButton > button {
+    width: 100%;
+    border-radius: 10px;
+    height: 3em;
+    font-size: 16px;
+}
+
+.result-box {
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+# 🛒 Analisis Sentimen Ulasan Shopee
+
+Aplikasi berbasis Machine Learning untuk mengklasifikasikan ulasan pelanggan menjadi sentimen positif atau negatif menggunakan algoritma Support Vector Machine (SVM) dan TF-IDF.
+""")
+
 import joblib
 import numpy as np
 import matplotlib.pyplot as plt
